@@ -4,7 +4,7 @@
 
 ### 1.1 Opisanie Aplikacji
 
-System Rejestracji Szczepień COVID-19 to aplikacja backendowa oparta na frameworku NestJS, która umożliwia kompleksowe zarządzanie procesem rejestracji i realizacji szczepień przeciwko COVID-19. System wspiera pełny cykl życia pacjenta - od rejestracji, przez umawianie wizyt, aż po dokumentowanie wykonanych szczepień.
+System Rejestracji Szczepień COVID-19 to aplikacja backendowa oparta na frameworku NestJS, która umożliwia zarządzanie procesem rejestracji i realizacji szczepień przeciwko COVID-19. System wspiera pełny cykl życia pacjenta - od rejestracji, przez umawianie wizyt, aż po dokumentowanie wykonanych szczepień.
 
 Aplikacja została zbudowana z wykorzystaniem:
 
@@ -21,53 +21,49 @@ Aplikacja została zbudowana z wykorzystaniem:
 - **US-001**: Jako administrator/staff, chcę dodać nowego pacjenta do systemu, aby móc zarządzać jego danymi.
 - **US-002**: Jako administrator/staff, chcę wyszukać pacjenta po PESEL, aby szybko znaleźć jego dane.
 - **US-003**: Jako administrator/staff, chcę zaktualizować dane pacjenta, aby utrzymać aktualne informacje.
-- **US-004**: Jako administrator/staff, chcę usunąć pacjenta z systemu, jeśli nie ma aktywnych wizyt.
-- **US-005**: Jako administrator/staff, chcę przeglądać listę pacjentów z paginacją i filtrowaniem, aby efektywnie zarządzać danymi.
+- **US-004**: Jako administrator/staff, chcę przeglądać listę pacjentów z paginacją i filtrowaniem, aby efektywnie zarządzać danymi.
 
 #### Zarządzanie Wizytami
 
-- **US-006**: Jako pacjent/staff, chcę umówić wizytę na szczepienie, wybierając klinikę i datę.
-- **US-007**: Jako system, chcę sprawdzić dostępność miejsc w klinice na wybraną datę, aby uniknąć przepełnienia.
-- **US-008**: Jako pacjent/staff, chcę anulować wizytę, jeśli nie mogę przyjść.
-- **US-009**: Jako administrator/staff, chcę zaktualizować szczegóły wizyty, aby dostosować je do zmienionych okoliczności.
-- **US-010**: Jako administrator/staff, chcę przeglądać wizyty z filtrowaniem po pacjencie, klinice, dacie i statusie.
+- **US-005**: Jako pacjent/staff, chcę umówić wizytę na szczepienie, wybierając klinikę i datę.
+- **US-006**: Jako system, chcę sprawdzić dostępność miejsc w klinice na wybraną datę, aby uniknąć przepełnienia.
+- **US-007**: Jako pacjent/staff, chcę anulować wizytę, jeśli nie mogę przyjść.
+- **US-008**: Jako administrator/staff, chcę zaktualizować szczegóły wizyty, aby dostosować je do zmienionych okoliczności.
+- **US-009**: Jako administrator/staff, chcę przeglądać wizyty z filtrowaniem po pacjencie, klinice, dacie i statusie.
 
 #### Zarządzanie Klinikami
 
-- **US-011**: Jako administrator, chcę przeglądać listę wszystkich klinik, aby zarządzać infrastrukturą.
-- **US-012**: Jako administrator, chcę zaktualizować dane kliniki, aby utrzymać aktualne informacje.
-- **US-013**: Jako pacjent/staff, chcę sprawdzić dostępność terminów w klinice na wybraną datę, aby umówić wizytę.
+- **US-010**: Jako administrator, chcę przeglądać listę wszystkich klinik, aby zarządzać infrastrukturą.
+- **US-011**: Jako administrator, chcę zaktualizować dane kliniki, aby utrzymać aktualne informacje.
+- **US-012**: Jako pacjent/staff, chcę sprawdzić dostępność terminów w klinice na wybraną datę, aby umówić wizytę.
 
 #### Dokumentowanie Szczepień
 
-- **US-014**: Jako lekarz, chcę zarejestrować wykonane szczepienie, aby udokumentować proces.
-- **US-015**: Jako administrator/staff/lekarz, chcę przeglądać historię szczepień, aby śledzić postępy pacjentów.
-- **US-016**: Jako lekarz, chcę dodać informacje o ewentualnych skutkach ubocznych, aby prowadzić dokumentację medyczną.
+- **US-013**: Jako lekarz, chcę zarejestrować wykonane szczepienie, aby udokumentować proces.
+- **US-014**: Jako administrator/staff/lekarz, chcę przeglądać historię szczepień, aby śledzić postępy pacjentów.
+- **US-015**: Jako lekarz, chcę dodać informacje o ewentualnych skutkach ubocznych, aby prowadzić dokumentację medyczną.
 
 #### Integracja z Zewnętrznymi API
 
-- **US-017**: Jako administrator/staff, chcę pobrać statystyki szczepień z zewnętrznego API, aby mieć aktualne dane globalne.
+- **US-016**: Jako administrator/staff, chcę pobrać statystyki szczepień z zewnętrznego API, aby mieć aktualne dane globalne.
 
 #### Bezpieczeństwo i Autoryzacja
 
-- **US-018**: Jako użytkownik, chcę zalogować się do systemu, aby uzyskać dostęp do funkcji zgodnie z moją rolą.
-- **US-019**: Jako system, chcę weryfikować uprawnienia użytkownika, aby zapewnić bezpieczny dostęp do danych.
-- **US-020**: Jako administrator, chcę mieć pełny dostęp do wszystkich funkcji systemu.
+- **US-017**: Jako użytkownik, chcę zalogować się do systemu, aby uzyskać dostęp do funkcji zgodnie z moją rolą.
+- **US-018**: Jako system, chcę weryfikować uprawnienia użytkownika, aby zapewnić bezpieczny dostęp do danych.
+- **US-019**: Jako administrator, chcę mieć pełny dostęp do wszystkich funkcji systemu.
 
 ### 1.3 Odbiorcy Systemu
 
-System został zaprojektowany dla dwóch głównych grup odbiorców:
+System został zaprojektowany dla personelu medycznego i administracyjnego:
 
 1. **Personel Medyczny i Administracyjny**
-   - Lekarze (DOCTOR) - rejestrowanie szczepień, przeglądanie historii pacjentów
-   - Personel administracyjny (STAFF) - zarządzanie pacjentami, wizytami, klinikami
+   - Lekarze (DOCTOR) - rejestrowanie szczepień, przeglądanie szczegółów pacjentów, zarządzanie wizytami
+   - Personel administracyjny (STAFF) - zarządzanie pacjentami, wizytami
    - Administratorzy (ADMIN) - pełne zarządzanie systemem, aktualizacja danych klinik
 
 2. **Pacjenci**
-   - Rejestracja w systemie
-   - Umawianie wizyt na szczepienia
-   - Sprawdzanie dostępności terminów
-   - Przeglądanie historii własnych szczepień
+   - Sprawdzanie dostępności terminów w klinikach
 
 ### 1.4 Korzyści dla Użytkowników
 
@@ -80,10 +76,7 @@ System został zaprojektowany dla dwóch głównych grup odbiorców:
 
 #### Dla Pacjentów:
 
-- **Dostępność**: Możliwość sprawdzenia dostępnych terminów w czasie rzeczywistym
-- **Przejrzystość**: Pełna historia własnych szczepień i wizyt
-- **Wygoda**: Prosty proces rejestracji i umawiania wizyt
-- **Bezpieczeństwo danych**: Ochrona danych osobowych poprzez szyfrowanie haseł i kontrolę dostępu
+- **Dostępność**: Możliwość sprawdzenia dostępnych terminów w klinikach w czasie rzeczywistym
 
 ## 2. Schemat Bazy Danych
 
@@ -97,37 +90,46 @@ System wykorzystuje relacyjną bazę danych PostgreSQL z następującym schemate
    - Identyfikacja: UUID
    - Rola: ADMIN, STAFF, DOCTOR
    - Dane osobowe: email, imię, nazwisko
+   - Status: aktywny/nieaktywny
 
 2. **Patient** - Pacjenci
    - Identyfikacja: UUID
    - Unikalny PESEL
-   - Dane kontaktowe: email, telefon, adres
+   - Dane osobowe: imię, nazwisko, data urodzenia
+   - Dane kontaktowe: email, telefon, adres, miasto, kod pocztowy
 
 3. **Clinic** - Kliniki
-   - Identyfikacja: Integer (auto-increment)
+   - Identyfikacja: Integer
+   - Nazwa kliniki
    - Dane lokalizacyjne: adres, miasto, kod pocztowy
+   - Dane kontaktowe: telefon, email
    - Pojemność dzienna (capacityPerDay)
 
 4. **Doctor** - Lekarze
    - Identyfikacja: UUID
-   - Powiązanie z User i Clinic
+   - Powiązanie z User (1:1) i Clinic (N:1)
    - Numer licencji medycznej
+   - Specjalizacja
 
 5. **Vaccine** - Szczepionki
    - Identyfikacja: Integer
    - Dane: nazwa, producent, numer partii, data ważności
    - Wymagana liczba dawek
+   - Temperatura przechowywania
 
 6. **Appointment** - Wizyty
    - Identyfikacja: UUID
    - Status: SCHEDULED, COMPLETED, CANCELLED, NO_SHOW
-   - Powiązania: Patient, Clinic, Doctor (opcjonalnie)
+   - Powiązania: Patient, Clinic, Doctor
    - Data wizyty, numer dawki
+   - Notatki
 
 7. **Vaccination** - Szczepienia (wykonane)
    - Identyfikacja: UUID
    - Powiązania: Appointment, Vaccine, Doctor
-   - Data wykonania, ewentualne skutki uboczne
+   - Data wykonania (administeredAt)
+   - Data następnej dawki
+   - Ewentualne skutki uboczne
 
 ### Relacje:
 
@@ -182,13 +184,14 @@ System wykorzystuje relacyjną bazę danych PostgreSQL z następującym schemate
   - Autoryzacja: ADMIN, STAFF
 
 - **POST /api/appointments** - Tworzenie wizyty
-  - Walidacja: data w przyszłości, dostępność miejsc w klinice
-  - Obsługa błędów: BadRequestException dla pełnej kliniki
+  - Walidacja: data w przyszłości, dostępność miejsc w klinice, walidacja lekarza
+  - Obsługa błędów: BadRequestException dla pełnej kliniki lub nieprawidłowej daty, NotFoundException dla nieistniejącego pacjenta/kliniki/lekarza
   - Autoryzacja: ADMIN, STAFF, DOCTOR
 
 - **POST /api/vaccinations** - Rejestracja szczepienia
-  - Walidacja: status wizyty, przypisanie lekarza do kliniki
-  - Obsługa błędów: BadRequestException dla nieprawidłowego statusu
+  - Walidacja: status wizyty (SCHEDULED lub COMPLETED), przypisanie lekarza do kliniki, ważność szczepionki, brak duplikatu rekordu
+  - Obsługa błędów: BadRequestException dla nieprawidłowego statusu, wygasłej szczepionki lub istniejącego rekordu, NotFoundException dla nieistniejącej wizyty/szczepionki/lekarza
+  - Automatycznie aktualizuje status wizyty na COMPLETED
   - Autoryzacja: DOCTOR
 
 - **POST /api/auth/login** - Logowanie użytkownika
@@ -226,7 +229,7 @@ System wykorzystuje relacyjną bazę danych PostgreSQL z następującym schemate
   - Paginacja: `page`, `limit`
   - Filtrowanie: `search`, `city`
   - Sortowanie: `sortBy`, `sortOrder`
-  - Autoryzacja: ADMIN, STAFF, DOCTOR
+  - Autoryzacja: ADMIN, STAFF
 
 - **GET /api/patients/:id** - Szczegóły pacjenta
   - Opcjonalne relacje: `?include=appointments`
@@ -264,7 +267,7 @@ System wykorzystuje relacyjną bazę danych PostgreSQL z następującym schemate
 - **DELETE /api/patients/:id** - Usuwanie pacjenta
   - Walidacja: nie można usunąć pacjenta z aktywnymi wizytami
   - Obsługa błędów: ConflictException dla aktywnych wizyt
-  - Autoryzacja: ADMIN, STAFF
+  - Autoryzacja: ADMIN
 
 - **DELETE /api/appointments/:id** - Usuwanie wizyty
   - Walidacja: nie można usunąć zakończonych wizyt
@@ -294,7 +297,6 @@ Wszystkie endpointy wykorzystują:
 - **BadRequestException** - gdy żądanie jest nieprawidłowe
 - **UnauthorizedException** - gdy brak autoryzacji
 - **ForbiddenException** - gdy brak uprawnień
-- **Global Exception Filter** - ujednolicony format odpowiedzi błędów
 
 ## 5. Wzorce Projektowe
 
@@ -306,7 +308,6 @@ Wszystkie endpointy wykorzystują:
 - **Testowalność**: Łatwe mockowanie repozytoriów w testach jednostkowych
 - **Elastyczność**: Możliwość zmiany warstwy dostępu do danych bez modyfikacji logiki biznesowej
 - **Utrzymywalność**: Centralizacja logiki dostępu do danych
-- **Bezpieczeństwo typów**: Interfejsy TypeScript zapewniają zgodność kontraktów
 
 ### 5.2 Wzorzec Warstwy Serwisowej (Service Layer Pattern)
 
@@ -316,6 +317,18 @@ Wszystkie endpointy wykorzystują:
 - **Reużywalność**: Logika biznesowa może być używana w różnych kontekstach
 - **Testowalność**: Łatwe testowanie logiki biznesowej bez kontrolerów
 - **Orchestracja**: Serwisy koordynują operacje między wieloma repozytoriami
+
+### 5.3 Wzorzec Strategy (Strategy Pattern)
+
+**Uzasadnienie wyboru:**
+
+- **Elastyczność**: Możliwość zmiany strategii uwierzytelniania bez modyfikacji kodu klienta
+- **Rozszerzalność**: Łatwe dodawanie nowych strategii (np. OAuth)
+- **Separacja odpowiedzialności**: Każda strategia enkapsuluje własną logikę weryfikacji
+
+**Implementacja:**
+
+- `JwtStrategy` - strategia uwierzytelniania oparta na JWT (Passport.js)
 
 ### Architektura Warstwowa
 
@@ -353,9 +366,16 @@ Testy jednostkowe zostały zaimplementowane dla kontrolera `PatientsController` 
 
 1. **Test tworzenia pacjenta**
 2. **Test duplikatu PESEL**
-3. **Test pobierania pacjenta**
-4. **Test usuwania pacjenta z aktywnymi wizytami**
-5. **Test walidacji PESEL**
+3. **Test walidacji PESEL**
+4. **Test paginowanej listy pacjentów**
+5. **Test pobierania pacjenta po ID**
+6. **Test NotFoundException**
+7. **Test z parametrem include**
+8. **Test aktualizacji pacjenta**
+9. **Test NotFoundException przy aktualizacji**
+10. **Test usuwania pacjenta**
+11. **Test ConflictException**
+12. **Test NotFoundException przy usuwaniu**
 
 ## Instalacja i Uruchomienie
 
